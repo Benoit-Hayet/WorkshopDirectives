@@ -1,0 +1,22 @@
+<section>
+  <h2>Prix à Définir</h2>
+  <ng-container *ngFor="let product of listProducts">
+    <li>{{ product.name }} {{ product.promo }}</li>
+  </ng-container>
+</section>
+
+<section>
+    <h2>Prix en promotion</h2>
+    <ul>
+      <ng-container *ngFor="let product of listProducts; trackBy: trackByProductId">
+        <li *ngIf="!product.promo">{{ product.name }}</li>
+      </ng-container>
+    </ul>
+  </section>
+  
+  <h2>Liste des autres produits :</h2>
+<div *ngFor="let product of listProducts">
+  <div *ngIf="product.prix !== null && product.promo === 0">
+    <p>{{ product.name }} : {{ product.prix }} €</p>
+  </div>
+</div>
