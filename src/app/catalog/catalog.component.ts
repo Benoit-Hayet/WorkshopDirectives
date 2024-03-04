@@ -16,7 +16,7 @@ export class CatalogComponent {
     { id: 2, name: 'Poire', prix: 4, promo:0 },
   ];
 
-  trackByProductId(index: number, product: Product): number {
+  trackByProductId(id: number, product: Product): number {
     return product.id;
 }
 }
